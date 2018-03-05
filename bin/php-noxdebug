@@ -1,0 +1,3 @@
+#!/bin/sh
+PREPEND=$(realpath "$(dirname $0)/../src/prepend.php")
+php -d"auto_prepend_file=$PREPEND" $*
