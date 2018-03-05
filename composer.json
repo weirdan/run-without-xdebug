@@ -1,6 +1,7 @@
 {
     "name": "weirdan/run-without-xdebug",
     "description": "Runs a php script with XDebug disabled",
+    "keywords" : ["Xdebug", "xdebug", "performance"],
     "type": "project",
     "require": {
         "composer/xdebug-handler": "dev-master"
