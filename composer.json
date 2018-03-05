@@ -6,7 +6,6 @@
         "composer/xdebug-handler": "dev-master"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.2"
     },
     "license": "MIT",
     "authors": [
