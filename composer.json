@@ -4,7 +4,7 @@
     "keywords" : ["Xdebug", "xdebug", "performance"],
     "type": "project",
     "require": {
-        "composer/xdebug-handler": "dev-master"
+        "composer/xdebug-handler": "@dev"
     },
     "require-dev": {
     },
