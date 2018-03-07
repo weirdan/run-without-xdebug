@@ -6,7 +6,7 @@
         "composer/xdebug-handler": "@dev"
     },
     "require-dev": {
-        "phpunit/phpunit": "@stable",
+        "phpunit/phpunit": "^5.0 || ^6.0 || ^7.0",
         "ext-xdebug": "*"
     },
     "autoload-dev": {
