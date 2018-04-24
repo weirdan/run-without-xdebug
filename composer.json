@@ -3,13 +3,21 @@
     "description": "Runs a php script with XDebug disabled",
     "keywords" : ["Xdebug", "xdebug", "performance"],
     "require": {
-        "composer/xdebug-handler": "^1.0",
+        "composer/xdebug-handler": "dev-standard-input",
         "php": "~5.3 || ~7.0"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:johnstevenson/xdebug-handler",
+            "no-api":true
+        }
+    ],
     "require-dev": {
         "phpunit/phpunit": "^5.0 || ^6.0 || ^7.0",
         "ext-xdebug": "*",
-        "php": "~5.6 || ~7.0"
+        "php": "~5.6 || ~7.0",
+        "monolog/monolog": "^1.23"
     },
     "autoload-dev": {
         "psr-4": {
