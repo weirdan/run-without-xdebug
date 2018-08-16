@@ -3,7 +3,7 @@
     "description": "Runs a php script with XDebug disabled",
     "keywords" : ["Xdebug", "xdebug", "performance"],
     "require": {
-        "composer/xdebug-handler": "^1.1.0",
+        "composer/xdebug-handler": "^1.2",
         "php": "~5.3 || ~7.0"
     },
     "require-dev": {

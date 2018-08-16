@@ -1,5 +1,6 @@
 <?php
 namespace Weirdan\RunWithoutXdebug;
+
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     // standalone
     require __DIR__ . '/../vendor/autoload.php';
@@ -28,4 +29,6 @@ call_user_func(function() {
 
     $x->setLogger($logger);
     $x->check();
+    $config = new \Composer\XdebugHandler\PhpConfig;
+    $config->usePersistent();
 });
