@@ -12,7 +12,26 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 call_user_func(function() {
     $x = new \Composer\XdebugHandler\XdebugHandler('RWX');
     if ($logFile = getenv('RWX_DEBUG_LOG')) {
-        $logger = new \Monolog\Logger('rwx', [new \Monolog\Handler\StreamHandler($logFile)]);
+        if (!class_exists(Logger::class, false)) {
+            class Logger extends \Psr\Log\AbstractLogger
+            {
+                private $filename;
+                public function __construct($filename)
+                {
+                    $this->filename = $filename;
+                }
+                public function log($level, $message, array $context = array())
+                {
+                    $formatted = '[' . $level . '] '
+                        . $message
+                        . " : "
+                        . strtr(var_export($context, true), ["\r" => '', "\n" => ''])
+                        . PHP_EOL;
+                    file_put_contents($this->filename, $formatted, FILE_APPEND);
+                }
+            }
+        }
+        $logger = new Logger($logFile);
     } else {
         $logger = new \Psr\Log\NullLogger;
     }
