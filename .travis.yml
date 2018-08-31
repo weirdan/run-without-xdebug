@@ -23,4 +23,5 @@ install:
   - composer install --no-interaction --no-progress --prefer-dist --ansi
 
 script:
+  - composer cs-check
   - composer test
