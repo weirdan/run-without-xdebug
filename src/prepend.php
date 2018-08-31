@@ -4,12 +4,12 @@ namespace Weirdan\RunWithoutXdebug;
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     // standalone
     require __DIR__ . '/../vendor/autoload.php';
-} else if (file_exists(__DIR__ . '/../../../autoload.php')) {
+} elseif (file_exists(__DIR__ . '/../../../autoload.php')) {
     // global or project
     require __DIR__ . '/../../../autoload.php';
 }
 
-call_user_func(function() {
+call_user_func(function () {
     $x = new \Composer\XdebugHandler\XdebugHandler('RWX');
     if ($logFile = getenv('RWX_DEBUG_LOG')) {
         if (!class_exists(Logger::class, false)) {
@@ -33,7 +33,7 @@ call_user_func(function() {
         }
         $logger = new Logger($logFile);
     } else {
-        $logger = new \Psr\Log\NullLogger;
+        $logger = new \Psr\Log\NullLogger();
     }
 
     // we don't have to detect command line code as auto_prepend_file doesn't work in that case
@@ -44,10 +44,9 @@ call_user_func(function() {
     $logger->debug('argv[0]: ' . $_SERVER['argv'][0]);
     $logger->debug('Main script: ' . $mainScript);
 
-    $x->setMainScript($mainScript);
-
-    $x->setLogger($logger);
-    $x->check();
-    $config = new \Composer\XdebugHandler\PhpConfig;
-    $config->usePersistent();
+    $x
+        ->setMainScript($mainScript)
+        ->setPersistent()
+        ->setLogger($logger)
+        ->check();
 });
