@@ -44,10 +44,8 @@ call_user_func(function() {
     $logger->debug('argv[0]: ' . $_SERVER['argv'][0]);
     $logger->debug('Main script: ' . $mainScript);
 
-    $x->setMainScript($mainScript);
-
-    $x->setLogger($logger);
-    $x->check();
-    $config = new \Composer\XdebugHandler\PhpConfig;
-    $config->usePersistent();
+    $x->setMainScript($mainScript)
+        ->setLogger($logger)
+        ->setPersistent()
+        ->check();
 });
