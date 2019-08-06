@@ -12,6 +12,11 @@
         "php": "~5.6 || ~7.0",
         "squizlabs/php_codesniffer": "^3.3"
     },
+    "autoload": {
+        "psr-4": {
+            "Weirdan\\RunWithoutXdebug\\": "src"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "Weirdan\\RunWithoutXdebug\\Tests\\Integration\\" : "tests/integration"
