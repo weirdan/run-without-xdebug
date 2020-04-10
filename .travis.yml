@@ -22,7 +22,7 @@ jobs:
   fast_finish: true
 
 install:
-  - composer install --no-interaction --no-progress --prefer-dist --ansi
+  - travis_retry composer install --no-interaction --no-progress --prefer-dist --ansi
 
 script:
   - composer cs-check
