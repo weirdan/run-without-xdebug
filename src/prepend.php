@@ -1,4 +1,5 @@
 <?php
+
 namespace Weirdan\RunWithoutXdebug;
 
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {

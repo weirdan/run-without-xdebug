@@ -1,4 +1,5 @@
 <?php
+
 namespace Weirdan\RunWithoutXdebug\Tests\Integration;
 
 use PHPUnit\Framework\TestCase;
