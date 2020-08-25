@@ -11,7 +11,7 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 }
 
 call_user_func(function () {
-    $x = new \Composer\XdebugHandler\XdebugHandler('RWX');
+    $x = new Restarter('RWX');
     if ($logFile = getenv('RWX_DEBUG_LOG')) {
         if (!class_exists(Logger::class, false)) {
             class Logger extends \Psr\Log\AbstractLogger
