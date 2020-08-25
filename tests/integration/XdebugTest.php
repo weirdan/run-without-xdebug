@@ -4,7 +4,7 @@ namespace Weirdan\RunWithoutXdebug\Tests\Integration;
 
 use PHPUnit\Framework\TestCase;
 
-class PHPUnitTest extends TestCase
+class XdebugTest extends TestCase
 {
     public function testNoXdebugWithoutIsolation()
     {
