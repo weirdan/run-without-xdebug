@@ -6,7 +6,6 @@ use Composer\XdebugHandler\XdebugHandler;
 
 class Restarter extends XdebugHandler
 {
-    /** @param string $command */
     protected function restart($command)
     {
         assert(null !== $this->tmpIni);
