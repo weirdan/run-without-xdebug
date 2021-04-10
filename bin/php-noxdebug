@@ -1,3 +1,4 @@
 #!/bin/sh
-PREPEND=$(readlink -f -- "$(dirname $(readlink -f -- $0))/../src/prepend.php")
+set -e
+PREPEND="$(php -n -r 'echo realpath(dirname(realpath($argv[1])) . "/../src/prepend.php");' -- "$0")"
 exec php -d"auto_prepend_file=$PREPEND" "$@"
