@@ -6,7 +6,7 @@ use Composer\XdebugHandler\XdebugHandler;
 
 class Restarter extends XdebugHandler
 {
-    protected function restart($command)
+    protected function restart($command): void
     {
         assert(null !== $this->tmpIni);
         $contents = file_get_contents($this->tmpIni);
